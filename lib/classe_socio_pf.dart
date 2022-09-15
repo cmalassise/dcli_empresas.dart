@@ -8,7 +8,8 @@ class SocioPF {
   final Endereco endereco;
 
   SocioPF.novoSocio()
-      : nome = ask('Nome do sócio:'),
+      : nome = ask(
+            'Agora precisaremos dos dados do(a) sócio(a)! \nNome do(a) sócio(a):'),
         cPF = ask('CPF do sócio'),
         endereco = Endereco.novoEndereco();
 

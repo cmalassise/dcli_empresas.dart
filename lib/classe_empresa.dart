@@ -1,4 +1,5 @@
 import 'package:dcli/dcli.dart';
+import 'package:dcli_empresas/classe_socio_pf.dart';
 import 'package:dcli_empresas/strings.dart';
 import 'package:uuid/uuid.dart';
 
@@ -12,7 +13,7 @@ class Empresa {
   final Endereco endereco;
   String telefone;
   DateTime horarioCadastro;
-  String socio;
+  SocioPF socio;
 
   Empresa.novaEmpresa()
       : horarioCadastro = DateTime.now(),
@@ -22,12 +23,10 @@ class Empresa {
         cnpj = ask(Strings.novoCnpj),
         endereco = Endereco.novoEndereco(),
         telefone = ask(Strings.novoTelefone),
-        socio = menu(
-            prompt: Strings.pfOuPj,
-            options: ['Pessoa Física', 'Pessoa Jurídica']);
+        socio = SocioPF.novoSocio();
 
   @override
   String toString() {
-    return 'Id: $id -- Horário do Cadastro: $horarioCadastro \nRazão Social: $razaoSocial \nNome Fantasia: $nomeFantasia \nCNPJ: $cnpj \nEndereço: $endereco \nTelefone: $telefone  \nSócio: $socio';
+    return '\nId: $id -- Horário do Cadastro: $horarioCadastro \nRazão Social: $razaoSocial \nNome Fantasia: $nomeFantasia \nCNPJ: $cnpj \nEndereço: $endereco \nTelefone: $telefone  \nSócio: $socio';
   }
 }

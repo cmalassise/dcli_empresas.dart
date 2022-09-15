@@ -10,8 +10,7 @@ class Strings {
       'Bem vindo ao nosso sistema! Digite um número para escolher uma das opções acima para prosseguir:';
   static String cadastrarEmpresa = 'Cadastrar uma nova empresa';
   static String buscarPorCnpj = 'Buscar Empresa cadastrada por CNPJ';
-  static String buscarPorCpfOuCnpjDoSocio =
-      'Buscar Empresa por CPF/CNPJ do Sócio';
+  static String buscarPorCpf = 'Buscar Empresa por CPF do Sócio';
   static String listarEmpresas =
       'Listar Empresas cadastradas em ordem alfabética (baseado na Razão Social)';
   static String excluirEmpresa = 'Excluir uma empresa (por ID)';
