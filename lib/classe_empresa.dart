@@ -20,13 +20,14 @@ class Empresa {
         id = Uuid().v1(),
         razaoSocial = ask(Strings.novaRazaoSocial),
         nomeFantasia = ask(Strings.novoNomeFantasia),
-        cnpj = ask(Strings.novoCnpj),
+        cnpj = ask(Strings.novoCnpj,
+            validator: Ask.all([Ask.integer, Ask.lengthRange(14, 14)])),
         endereco = Endereco.novoEndereco(),
-        telefone = ask(Strings.novoTelefone),
+        telefone = ask(Strings.novoTelefone, validator: Ask.integer),
         socio = SocioPF.novoSocio();
 
   @override
   String toString() {
-    return '\nId: $id -- Horário do Cadastro: $horarioCadastro \nRazão Social: $razaoSocial \nNome Fantasia: $nomeFantasia \nCNPJ: $cnpj \nEndereço: $endereco \nTelefone: $telefone  \nSócio: $socio';
+    return '\nId: $id -- Horário do Cadastro: $horarioCadastro \nRazão Social: $razaoSocial \nNome Fantasia: $nomeFantasia \nCNPJ: $cnpj \nEndereço: $endereco \nTelefone: $telefone \nDados do(a) Sócio(a): $socio';
   }
 }

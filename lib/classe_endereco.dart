@@ -7,19 +7,22 @@ class Endereco {
   String bairro;
   String cidade;
   String estado;
-  String cEP;
+  String cep;
 
   Endereco.novoEndereco()
       : logradouro = ask('Digite a rua:'),
-        numero = ask('Digite o número'),
-        complemento = ask('Complemento:'),
+        numero = ask('Digite o número:'),
+        complemento = ask(
+          'Complemento:',
+          required: false,
+        ),
         cidade = ask('Cidade:'),
-        bairro = ask('Bairro'),
-        estado = ask('Estado'),
-        cEP = ask('CEP');
+        bairro = ask('Bairro:'),
+        estado = ask('Estado:'),
+        cep = ask('CEP:', validator: Ask.integer);
 
   @override
   String toString() {
-    return '$logradouro, $numero, $complemento, $bairro, $cidade, $estado, $cEP';
+    return '$logradouro, $numero, $complemento, $bairro, $cidade, $estado, $cep';
   }
 }

@@ -30,21 +30,17 @@ Future<void> main() async {
     } else if (cadastroEmpresas == Strings.buscarPorCnpj) {
       var perguntaCnpj = ask('Qual é o CNPJ da empresa a ser buscada?');
 
-      List<String> listaComparar = [perguntaCnpj];
-
-      print(empresas.where((item) => listaComparar.contains(item.cnpj)));
+      print(empresas.where((item) => perguntaCnpj.contains(item.cnpj)));
     } else if (cadastroEmpresas == Strings.buscarPorCpf) {
       var perguntaCpf = ask('Digite o CPF ou o CNPJ do sócio');
 
-      List<String> listComparar = [perguntaCpf];
-
-      print(empresas.where((item) => listComparar.contains(item.socio.cPF)));
+      print(empresas.where((item) => perguntaCpf.contains(item.socio.cPF)));
     } else if (cadastroEmpresas == Strings.listarEmpresas) {
       empresas.sort((a, b) => a.razaoSocial.compareTo(b.razaoSocial));
       print(empresas);
-      // print(empresas);
     } else if (cadastroEmpresas == Strings.excluirEmpresa) {
       var perguntaId = ask('Qual é o Id da empresa que deseja remover?');
+
       empresas.removeWhere((element) => element.id == perguntaId);
     } else if (cadastroEmpresas == Strings.sair) {
       break;
