@@ -40,7 +40,9 @@ Future<void> main() async {
 
       print(empresas.where((item) => listComparar.contains(item.socio.cPF)));
     } else if (cadastroEmpresas == Strings.listarEmpresas) {
+      empresas.sort((a, b) => a.razaoSocial.compareTo(b.razaoSocial));
       print(empresas);
+      // print(empresas);
     } else if (cadastroEmpresas == Strings.excluirEmpresa) {
       var perguntaId = ask('Qual é o Id da empresa que deseja remover?');
       empresas.removeWhere((element) => element.id == perguntaId);
