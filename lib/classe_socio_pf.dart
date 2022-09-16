@@ -4,18 +4,18 @@ import 'classe_endereco.dart';
 
 class SocioPF {
   String nome;
-  String cPF;
+  String cpf;
   final Endereco endereco;
 
   SocioPF.novoSocio()
       : nome = ask(
             'Agora precisaremos dos dados do(a) sócio(a)! \nNome do(a) sócio(a):'),
-        cPF = ask('CPF:',
+        cpf = ask('CPF:',
             validator: Ask.all([Ask.integer, Ask.lengthRange(11, 11)])),
         endereco = Endereco.novoEndereco();
 
   @override
   String toString() {
-    return '\nNome: $nome \nCPF: $cPF \nEndereço: $endereco';
+    return '\nNome: $nome \nCPF: ${cpf.substring(0, 3)}.${cpf.substring(3, 6)}.${cpf.substring(6, 9)}-${cpf.substring(9)} \nEndereço: $endereco';
   }
 }

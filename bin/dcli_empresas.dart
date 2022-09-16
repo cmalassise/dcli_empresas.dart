@@ -34,7 +34,7 @@ Future<void> main() async {
     } else if (cadastroEmpresas == Strings.buscarPorCpf) {
       var perguntaCpf = ask('Digite o CPF ou o CNPJ do sócio');
 
-      print(empresas.where((item) => perguntaCpf.contains(item.socio.cPF)));
+      print(empresas.where((item) => perguntaCpf.contains(item.socio.cpf)));
     } else if (cadastroEmpresas == Strings.listarEmpresas) {
       empresas.sort((a, b) => a.razaoSocial.compareTo(b.razaoSocial));
       print(empresas);

@@ -28,6 +28,6 @@ class Empresa {
 
   @override
   String toString() {
-    return '\nId: $id -- Horário do Cadastro: $horarioCadastro \nRazão Social: $razaoSocial \nNome Fantasia: $nomeFantasia \nCNPJ: $cnpj \nEndereço: $endereco \nTelefone: $telefone \nDados do(a) Sócio(a): $socio';
+    return '\nId: $id -- Horário do Cadastro: $horarioCadastro \nRazão Social: $razaoSocial \nNome Fantasia: $nomeFantasia \nCNPJ: ${cnpj.substring(0, 2)}.${cnpj.substring(2, 5)}.${cnpj.substring(5, 8)}/${cnpj.substring(8, 12)}-${cnpj.substring(12)} \nEndereço: $endereco \nTelefone: $telefone \nDados do(a) Sócio(a6): $socio';
   }
 }
